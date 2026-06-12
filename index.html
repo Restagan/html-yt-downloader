@@ -270,7 +270,7 @@
             });
             
             const data = await response.json();
-            if (!response.ok) throw new Error(data.detail || "Gagal mengambil data");
+            if (!response.ok) throw new Error(data.detail || data.error || "Gagal mengambil data");
 
             currentUrl = url;
             document.getElementById("thumb").src = data.thumbnail;
